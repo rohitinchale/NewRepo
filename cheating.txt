@@ -1,0 +1,142 @@
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ vi file1.txt
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git add file1.txt
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit
+-m "File1 committed!0"
+-bash: !0: event not found
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit
+-m "Added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <rohitunix@Rohit-Inchale.localdomain>) not allowed
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git config
+--global user.email "rohitinchale49758@gmail.com"
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit
+-m "Added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <rohitinchale49758@gmail.com>) not allowed
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git config
+--global user.name "rohitinchale"
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit
+-m "Added"
+[master (root-commit) 1adf76c] Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git status
+On branch master
+nothing to commit, working tree clean
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git branch -M main
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git status
+On branch main
+nothing to commit, working tree clean
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git branch branch1
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git checkout branch1
+Switched to branch 'branch1'
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ vi file2.txt
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git add .
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git status
+On branch branch1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file2.txt
+
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit -m "file2"
+[branch1 61d33a5] file2
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file2.txt
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git branch branch2
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ vi file3.txtx
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git add .
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git commit
+-m "file3"
+[branch1 d8e841a] file3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txtx
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git checkout main
+Switched to branch 'main'
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git merge branch1
+Updating 1adf76c..d8e841a
+Fast-forward
+ file2.txt  | 2 ++
+ file3.txtx | 1 +
+ 2 files changed, 3 insertions(+)
+ create mode 100644 file2.txt
+ create mode 100644 file3.txtx
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git merge branch2
+Already up to date.
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git branch
+  branch1
+  branch2
+* main
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git ls-files
+file1.txt
+file2.txt
+file3.txtx
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git log -2
+commit d8e841aa5e193fcba806818d43efe6c0854e7ce6 (HEAD -> main, branch1)
+Author: rohitinchale <rohitinchale49758@gmail.com>
+Date:   Tue Jul 30 20:42:32 2024 +0530
+
+    file3
+
+commit 61d33a51e4c581b3080a95067b1c1539c2095643 (branch2)
+Author: rohitinchale <rohitinchale49758@gmail.com>
+Date:   Tue Jul 30 20:41:33 2024 +0530
+
+    file2
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git log --graph --oneline
+* d8e841a (HEAD -> main, branch1) file3
+* 61d33a5 (branch2) file2
+* 1adf76c Added
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git remote add origin https://github.com/rohitinchale/NewRepo.git
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$ git push origin main
+Username for 'https://github.com': rohitinchale
+Password for 'https://rohitinchale@github.com':
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 675 bytes | 13.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/rohitinchale/NewRepo.git
+ * [new branch]      main -> main
+rohitunix@Rohit-Inchale:/mnt/c/Users/hp/Documents/Ubuntu/KoiBhi$
